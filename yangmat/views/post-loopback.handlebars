@@ -1,0 +1,58 @@
+<h1>{{method}} Request Received</h1>
+
+<div>
+    {{#if (isEmpty getParams)}}
+    <h3>No GET parameters sent</h3>
+    {{else}}
+    <table style="width: 300px;text-align: center;">
+        <caption>GET Parameters</caption>
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each getParams}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.value}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{/if}}
+</div>
+
+
+{{#if (isPost method)}}
+<br style="margin-top: 15px;">
+
+<div>
+    {{#if (isEmpty postParams)}}
+    <h3>No POST parameters sent</h3>
+    {{else}}
+    <table style="width: 300px;text-align: center;">
+        <caption>POST Parameters</caption>
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each postParams}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.value}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{/if}}
+</div>
+{{/if}}
