@@ -28,7 +28,7 @@ app.get('/show-data',function(req,res){
     for (let p in req.query) {
         context.getParams.push({"name": p, "value": req.query[p]});
     }
-    res.render('post-loopback', context);
+    res.render('show-data', context);
 });
 
 app.post('/show-data', function(req,res){
@@ -43,7 +43,7 @@ app.post('/show-data', function(req,res){
     for (let p in req.body) {
         context.postParams.push({"name": p, "value": req.body[p]});
     }
-    res.render('post-loopback', context);
+    res.render('show-data', context);
 });
 
 app.use(function(req,res){
